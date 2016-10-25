@@ -19,6 +19,7 @@ If you don't already have a github account then you need to make one. Use an ema
 ### Cloud9 and Github Linking
 
 Before continuing to work with Git and Github you have to setup a connection so that Git knows where you are pushing your work to. Here you will be making a SSH rather than a HTTPS key because for an HTTPS key you have to enter your username and password everytime you attempt to push something to Github. With an SSH key its a one time thing that will allow you to push your work without having to type in your username and password.
+
 1.  First you have to open Github and go to settings. On the menu you have to look for SSH and GPG keys. Click on make a new key and then stop there. 
 2.  Now you have to open up your cloud9 and sign,then click on the gear icon and go to SSH Keys. There you should see a code beginning with `ssh-rsa` or something close to that. Copy and Paste that key and go back to github. There you will paste the key. 
 3.  Finally, you will have to go to back to cloud9 and open up the worspace that you want to make the connection between. In your command line type `ssh -T git@github.com`. It should give you back "Hi _your username_! You've successfully authenticated, but GitHub does not provide shell access." Then you're done a connection has been permanently made.
