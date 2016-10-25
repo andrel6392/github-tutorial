@@ -14,7 +14,7 @@ Github is where your code gets stored. Atlhough you have to set up a connection 
 ---
 ## Initial Setup
 ### Account Setup for Github and Cloud9
-If you don't already have a github account then you need to make one. Use an email that you already have and if you are from HSTAT use your school email. If you don't know it then it's first name + first letter of your last name + last 4 digits of your ID + hstat.org. Make sure to go to your email and verify your Github account.
+If you don't already have a github account then you need to make one. Use an email that you already have and if you are from HSTAT use your school email. If you don't know it then it's first name + first letter of your last name + last 4 digits of your ID + hstat.org. Make sure to go to your email and verify your Github account. Open up cloud9 again and then go to settings and click and connected services. You should see an option to connect to github. Click on that then you can begin to sign in through github when using cloud9.
 
 ### Cloud9 and Github Linking
 
@@ -22,7 +22,7 @@ Before continuing to work with Git and Github you have to setup a connection so 
 1.  First you have to open Github and go to settings. On the menu you have to look for SSH and GPG keys. Click on make a new key and then stop there. 
 2.  Now you have to open up your cloud9 and sign,then click on the gear icon and go to SSH Keys. There you should see a code beginning with `ssh-rsa` or something close to that. Copy and Paste that key and go back to github. There you will paste the key. 
 3.  Finally, you will have to go to back to cloud9 and open up the worspace that you want to make the connection between. In your command line type `ssh -T git@github.com`. It should give you back "Hi _your username_! You've successfully authenticated, but GitHub does not provide shell access." Then you're done a connection has been permanently made.
-
+    
 
 ---
 ## Repository Setup
@@ -40,3 +40,9 @@ To make a local repository we can use the same repository from before. However, 
 This command is the go to command. The command is written like so: `git status`If you come accross an error you will most likely want to git status to try and see what the problem in your code is. The git status command will let you know of any untracked files and which files need to be committed. This won't tell you of any errors in your code though, that is what the command line is for.
 ### Git Add
 The use for this command is to "add" your files to the staging area. The way git commands were taught to me is that git itself is a photographer and github is the album where photographs are stored. When you use `git add` you are bringing all your files onto the stage for their picture to be taken. The pictures however is not taken yet, so the files are just waiting there for something to happen. There are different variations of the `git add` command. For example, you could do `git add .` which adds all the files that have been changed from your last commit/add. You can use `git add file` which adds a specific file that you have in your repository. Finally, you can do `git add --all` which literally adds all the files in your repository.
+### Git Commit
+Going back to the photographer reference above, using git commit is how you take a picture of your work that you have done so far. The only things that will be committed or taken a picture of, are the things that have been added to the stage. The command is written like so: `git commit -m "message"`. The commit messages are usually short and they explain what the commits do, usually written in present tense telling the user what the commit changed or added.
+### Git Push
+Now that the photograph has been taken, what do we do now? The answer you should say is put it in an album. This is done by pushing your commits to the github. In order to push though, you must have a connection setup(refer back to Remote Repository). Once that is done you can push whenever you want and your latest commits will also go to the website. After you have a link setup to your repository you area able to just `git push` and thats it.
+
+--- 
