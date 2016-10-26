@@ -6,9 +6,9 @@ _by Andre Lara_
 ## Git vs. GitHub
 
 ### Git
-Git is a type of code language used on the command line. It can serve as version control for your code because it saves how your code looked before you made a drastic change that caused an error and you want to get back to your old code, before the error. Even though Git is in the word Github, you **do not** need to use Github when using git. It is completely optional.
+Git is used on the command line. It can serve as version control for your code because it saves how your code looked before you made a drastic change that caused an error and you want to get back to your old code, the one before the error. Even though Git is in the word Github, you **do not** need to use Github when using git. It is completely optional. A final piece of advice is that you can use the same commands you use on the command line with git. I was not aware of this on my first day of practice.
 ### Github
-Github is where your code gets stored. Atlhough you have to set up a connection between Github and your repository so that you can see your code being stored in the cloud. You have to `add` `commit` and `push` before being able to see the changes you make to your repository. Even though most people use Github for storing their code, it can store many other documents and files. For example, it can hold the lyrics to different songs, legal files, architectural plans. If you are going to use Github you **have** to use git, it is not optional. 
+Github is where your code gets stored. Atlhough you have to set up a connection between Github and your repository so that you can see your code being stored in the cloud. You have to `add`, `commit` and `push` before being able to see the changes you make to your repository. Even though most people use Github for storing their code, it can store many other documents and files. For example, it can hold the lyrics to different songs, legal files, architectural plans. If you are going to use Github you **have** to use git, it is not optional. 
 
 
 ---
@@ -47,3 +47,12 @@ Going back to the photographer reference above, using git commit is how you take
 Now that the photograph has been taken, what do we do now? The answer you should say is put it in an album. This is done by pushing your commits to the github. In order to push though, you must have a connection setup(refer back to Remote Repository). Once that is done you can push whenever you want and your latest commits will also go to the website. After you have a link setup to your repository you area able to just `git push` and thats it.
 
 --- 
+## Error Handling
+### Used `git init` in the Wrong Place?
+You can use rm -rf .git to remove git. `rm -rf` is used to remove files that already have stuff inside of them. The "r" part meaning to keep deleting things and the "f" meaning forcefully delete the following. `.git` portion is usually where the name of a file is and technically there is a file there, since git has period infront of it, this just means the file is hidden and you cannot see it.
+ 
+### Stuck with a sideways `^` symbol?
+First off, the ^ symbol only means to press control,however to get out of these situations you have to use either ctrl + d or ctrl + c. If one doesn't work try the other, one of the two should be the solution to your error.
+
+### How do you Remove a Repository(Local and Remote)?
+In order to remove a remote repository you sign into github and go to which ever repository you want to remove. Once you're in the repository go to the settings of that repository and scroll all the way to the bottom and click delete. To confirm you have to retype the repository name. Now that the remote repository is gone we can proceed to delete the local repository. To do so you just open your workspace on cloud9 and go to the parent directory of the file or folder you want to delete. All you have to do from here is type `rm -rf filename` and poof! It's gone.
