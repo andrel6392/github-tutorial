@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Github Tutorial by andrel6392</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Github Tutorial</h1>
+          <h2>GITting Started</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/andrel6392/github-tutorial/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/andrel6392/github-tutorial/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/andrel6392/github-tutorial" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="github-tutorial" class="anchor" href="#github-tutorial" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GitHub Tutorial</h1>
+
+<p><em>by Andre Lara</em></p>
+
+<hr>
+
+<h2>
+<a id="git-vs-github" class="anchor" href="#git-vs-github" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git vs. GitHub</h2>
+
+<h3>
+<a id="git" class="anchor" href="#git" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git</h3>
+
+<p>Git is used on the command line. It can serve as version control for your code because it saves how your code looked before you made a drastic change that caused an error and you want to get back to your old code, the one before the error. Even though Git is in the word Github, you <strong>do not</strong> need to use Github when using git. It is completely optional. A final piece of advice is that you can use the same commands you use on the command line with git. I was not aware of this on my first day of practice.</p>
+
+<h3>
+<a id="github" class="anchor" href="#github" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Github</h3>
+
+<p>Github is where your code gets stored. Atlhough you have to set up a connection between Github and your repository so that you can see your code being stored in the cloud. You have to <code>add</code>, <code>commit</code> and <code>push</code> before being able to see the changes you make to your repository. Even though most people use Github for storing their code, it can store many other documents and files. For example, it can hold the lyrics to different songs, legal files, architectural plans. If you are going to use Github you <strong>have</strong> to use git, it is not optional. </p>
+
+<hr>
+
+<h2>
+<a id="initial-setup" class="anchor" href="#initial-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initial Setup</h2>
+
+<h3>
+<a id="account-setup-for-github-and-cloud9" class="anchor" href="#account-setup-for-github-and-cloud9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Account Setup for Github and Cloud9</h3>
+
+<p>If you don't already have a github account then you need to make one. Use an email that you already have and if you are from HSTAT use your school email. If you don't know it then it's first name + first letter of your last name + last 4 digits of your ID + hstat.org. Make sure to go to your email and verify your Github account. Open up cloud9 again and then go to settings and click and connected services. You should see an option to connect to github. Click on that then you can begin to sign in through github when using cloud9.</p>
+
+<h3>
+<a id="cloud9-and-github-linking" class="anchor" href="#cloud9-and-github-linking" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cloud9 and Github Linking</h3>
+
+<p>Before continuing to work with Git and Github you have to setup a connection so that Git knows where you are pushing your work to. Here you will be making a SSH rather than a HTTPS key because for an HTTPS key you have to enter your username and password everytime you attempt to push something to Github. With an SSH key its a one time thing that will allow you to push your work without having to type in your username and password.</p>
+
+<ol>
+<li> First you have to open Github and go to settings. On the menu you have to look for SSH and GPG keys. Click on make a new key and then stop there. </li>
+<li> Now you have to open up your cloud9 and sign,then click on the gear icon and go to SSH Keys. There you should see a code beginning with <code>ssh-rsa</code> or something close to that. Copy and Paste that key and go back to github. There you will paste the key. </li>
+<li> Finally, you will have to go to back to cloud9 and open up the worspace that you want to make the connection between. In your command line type <code>ssh -T git@github.com</code>. It should give you back "Hi <em>your username</em>! You've successfully authenticated, but GitHub does not provide shell access." Then you're done a connection has been permanently made.</li>
+</ol>
+
+<hr>
+
+<h2>
+<a id="repository-setup" class="anchor" href="#repository-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Repository Setup</h2>
+
+<h3>
+<a id="local-repository" class="anchor" href="#local-repository" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Local Repository</h3>
+
+<p>Now that you have everything setup, its time to make your first repository. To begin you will want to go to cloud9 and open up your workspace. Once you're in your workspace open up the terminal and make sure you are in <em>username</em>:~/workspace. Never initialize git in your workspace, you'll always want to create another folder and then initialize git. Now we can create a folder called first-repo, type into the terminal <code>mkdir first-repo</code> and go into it by doing <code>cd first-repo</code>. Now that you created a new folder and you are in the folder, you're going to want to initialize git. You do this by using <code>git init</code>. That is basically how to create a local repository, lets take it a step further and do our first add and commit. Go back to the terminal and make sure you are still in <code>first-repo</code>. Next create a file and add some text to it. Use <code>touch</code> to create a file. Add some text into the file and then make sure cloud9 saves. If you were to type <code>git status</code> you would see that there is one untracked file, the one we made. To start tracking the file you can use the <code>git add</code> command. After typing this if you do <code>git status</code> again you can see that the file is now being tracked and is green instead of red. Now that the file has been added to the "stage" we can commit. Type <code>git commit -m "message"</code>, when writing a commit message it should be short and in the present tense. This is sort of like an unspoken rule of commit messages. Now we are done with the local repository.</p>
+
+<h3>
+<a id="remote-repository" class="anchor" href="#remote-repository" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remote Repository</h3>
+
+<p>To make a local repository we can use the same repository from before. However, for this you will have to open up Github and sign in to your account. Once you sign in you will see a + sign in the top right corner. Click that and then choose new repository. When naming this new repository you have to name it the same exact name that your repo on cloud9 was called. Once you name it and press continue there will be a bar that says HTPPS and SSH. Make sure you have SSH highlighted and then you can copy and paste the portion of code that says "...or push an existing repository from the command line". After this step you should be able to push your files from your local repository on cloud9 to your remote repository on Github. Lets try it out. Go into your file and change the text in the file. Now you have to <code>add</code> and <code>commit</code> again, however this time you have to use the <code>git push</code> command. Once you use that command it will give you a bunch of text in response but really its just publishing your work to the cloud or github in other words. Now refresh your github page and you should see your changes along with your github commit message. If you ever have an error use <code>git remote -v</code>. You should see a line starting with fetch and then a line with push. The push line is what matters because it tells you where you are pushing your cloud9 files to.</p>
+
+<hr>
+
+<h2>
+<a id="workflow--commands" class="anchor" href="#workflow--commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Workflow &amp; Commands</h2>
+
+<h3>
+<a id="git-status" class="anchor" href="#git-status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git Status</h3>
+
+<p>This command is the go to command. The command is written like so: <code>git status</code>If you come accross an error you will most likely want to git status to try and see what the problem in your code is. The git status command will let you know of any untracked files and which files need to be committed. This won't tell you of any errors in your code though, that is what the command line is for.</p>
+
+<h3>
+<a id="git-add" class="anchor" href="#git-add" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git Add</h3>
+
+<p>The use for this command is to "add" your files to the staging area. The way git commands were taught to me is that git itself is a photographer and github is the album where photographs are stored. When you use <code>git add</code> you are bringing all your files onto the stage for their picture to be taken. The pictures however is not taken yet, so the files are just waiting there for something to happen. There are different variations of the <code>git add</code> command. For example, you could do <code>git add .</code> which adds all the files that have been changed from your last commit/add. You can use <code>git add file</code> which adds a specific file that you have in your repository. Finally, you can do <code>git add --all</code> which literally adds all the files in your repository.</p>
+
+<h3>
+<a id="git-commit" class="anchor" href="#git-commit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git Commit</h3>
+
+<p>Going back to the photographer reference above, using git commit is how you take a picture of your work that you have done so far. The only things that will be committed or taken a picture of, are the things that have been added to the stage. The command is written like so: <code>git commit -m "message"</code>. The commit messages are usually short and they explain what the commits do, usually written in present tense telling the user what the commit changed or added.</p>
+
+<h3>
+<a id="git-push" class="anchor" href="#git-push" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git Push</h3>
+
+<p>Now that the photograph has been taken, what do we do now? The answer you should say is put it in an album. This is done by pushing your commits to the github. In order to push though, you must have a connection setup(refer back to Remote Repository). Once that is done you can push whenever you want and your latest commits will also go to the website. After you have a link setup to your repository you area able to just <code>git push</code> and thats it.</p>
+
+<hr>
+
+<h2>
+<a id="error-handling" class="anchor" href="#error-handling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Error Handling</h2>
+
+<h3>
+<a id="used-git-init-in-the-wrong-place" class="anchor" href="#used-git-init-in-the-wrong-place" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Used <code>git init</code> in the Wrong Place?</h3>
+
+<p>You can use rm -rf .git to remove git. <code>rm -rf</code> is used to remove files that already have stuff inside of them. The "r" part meaning to keep deleting things and the "f" meaning forcefully delete the following. <code>.git</code> portion is usually where the name of a file is and technically there is a file there, since git has period infront of it, this just means the file is hidden and you cannot see it.</p>
+
+<h3>
+<a id="stuck-with-a-sideways--symbol" class="anchor" href="#stuck-with-a-sideways--symbol" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Stuck with a sideways <code>^</code> symbol?</h3>
+
+<p>First off, the ^ symbol only means to press control,however to get out of these situations you have to use either ctrl + d or ctrl + c. If one doesn't work try the other, one of the two should be the solution to your error.</p>
+
+<h3>
+<a id="how-do-you-remove-a-repositorylocal-and-remote" class="anchor" href="#how-do-you-remove-a-repositorylocal-and-remote" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How do you Remove a Repository(Local and Remote)?</h3>
+
+<p>In order to remove a remote repository you sign into github and go to which ever repository you want to remove. Once you're in the repository go to the settings of that repository and scroll all the way to the bottom and click delete. To confirm you have to retype the repository name. Now that the remote repository is gone we can proceed to delete the local repository. To do so you just open your workspace on cloud9 and go to the parent directory of the file or folder you want to delete. All you have to do from here is type <code>rm -rf filename</code> and poof! It's gone.</p>
+        </section>
+
+        <footer>
+          Github Tutorial is maintained by <a href="https://github.com/andrel6392">andrel6392</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
